@@ -1,10 +1,11 @@
 import dva from 'dva';
 import './index.css';
 import createHistory from 'history/createBrowserHistory';
+import { browserHistory } from 'dva/router';
 // import createLoading from 'dva-loading';
 
 const app = dva({
-    history: createHistory(),
+    history: browserHistory,
   });
   
 //   app.use(createLoading());

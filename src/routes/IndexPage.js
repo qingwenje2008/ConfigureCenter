@@ -1,6 +1,6 @@
 import { connect } from 'dva';
 import React from 'react';
-import { HashRouter as Router, Route, Switch } from 'dva/router';
+import { BrowserRouter as Router, Route, Switch } from 'dva/router';
 import {
   Layout
 } from 'antd';

@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'dva/router';
+import { Router, Route, Switch } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 function RouterConfig({ history }) {
   return (
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <Switch>
         <Route path="/" exact component={IndexPage} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 
