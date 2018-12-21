@@ -26,12 +26,10 @@ render(){
     },
   }];
   return (
-      <div style={{width:'100%',height:'100%'}}>
         <Table
-        dataSource={this.props.products}
-        columns={columns}
+          dataSource={this.props.products}
+          columns={columns}
         />
-      </div>
   );
 }
 };
