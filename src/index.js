@@ -5,24 +5,24 @@ import './index.css';
 // const app = dva({
 //     history: browserHistory,
 //   });
-  const app = dva({
-      initialState: {
-        products: [
-          { name: 'dva', id: 1 },
-          { name: 'antd', id: 2 },
-        ],
-      },
-    });
+  // const app = dva({
+  //     initialState: {
+  //       products: [
+  //         { name: 'dva', id: 1 },
+  //         { name: 'antd', id: 2 },
+  //       ],
+  //     },
+  //   });
 //   app.use(createLoading());
   
 // 1. Initialize
-// const app = dva();
+const app = dva();
 
 // 2. Plugins
 app.use({});
 
 // 3. Model
-app.model(require('./models/example').default);
+app.model(require('./models/global.model').default);
 
 // 4. Router
 app.router(require('./main').default);
