@@ -1,7 +1,5 @@
 import dva from 'dva';
 import './index.css';
-import createHistory from 'history/createBrowserHistory';
-import { browserHistory } from 'dva/router';
 // import createLoading from 'dva-loading';
 
 // const app = dva({
@@ -27,7 +25,7 @@ app.use({});
 app.model(require('./models/example').default);
 
 // 4. Router
-app.router(require('./router').default);
+app.router(require('./main').default);
 
 // 5. Start
 app.start('#root');

@@ -4,32 +4,27 @@ import { BrowserRouter as Router, Route, Switch } from 'dva/router';
 import {
   Layout 
 } from 'antd';
-import Application from './application'
-import MainHeader from '../components/mainHeader'
-import MainMenu from '../components/mainMenu'
-import ContentHeader from '../components/contentHeader'
+import MainHeader from '../mainHeader'
+import MainMenu from '../mainMenu'
+import ContentHeader from '../contentHeader'
 const {Content} =Layout;
-class Users extends React.Component {
+class MyLayout extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
+    const { children } = this.props;
     return <Router>
       <Layout style={styles.main}>
         <MainHeader/>
         <Layout>
           <MainMenu/>
           {/** 应用模块的子路由 */}
-        <Layout style={styles.menu}>
-      
-        <ContentHeader/>
-        <Content style={styles.content}
-        >
-          <Switch>
-            <Route path={`/app`} exact component={Application} />
-          </Switch>
-        </Content>
-     
+          <Layout style={styles.menu}>
+            <ContentHeader/>
+            <Content style={styles.content}>
+              {children}
+            </Content>
           </Layout>
         </Layout>
       </Layout>
@@ -47,4 +42,4 @@ const styles={
 }
 // const DownloadPage = ({ match }) => <Download channelId={match.params.id} />;
 
-export default connect()(Users);
+export default connect()(MyLayout);
