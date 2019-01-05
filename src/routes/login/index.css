@@ -1,0 +1,58 @@
+.loginBody {
+    height:100%;
+    width: 100%;
+ 
+    
+} 
+
+.loginMain {
+    width: 420px;
+    height: 400px;
+    position: absolute;
+    background: #FFF;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #eee;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px -5px rgba(53,77,153,0.15);
+}
+    .loginForm {
+        width: 240px;
+        margin: 60px auto 0;
+    }
+    .loginFormForgot {
+        float: right;
+    }
+    .loginFormButton {
+        width: 100%;
+    }
+    .loginLeft {
+        float: left;
+        width: 420px;
+        height: 100%;
+    }
+    .loginRight {
+        float: right;
+        width: 537px;
+        height: 500px;
+        
+    }
+    img {
+        height: 499px;
+    }
+    .verificationCode {
+        width: 110px; 
+        height: 32px;
+        float: right;
+        margin-top: 3px;
+    }
+    .loginRemember {
+        margin-bottom: 8px;
+        height: 28px;
+        line-height: 28px;
+       
+    }
+    .ant-form-item-control {
+        line-height: 28px;
+    }

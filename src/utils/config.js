@@ -5,7 +5,7 @@ export const sliderMenus = [{
   }, {
     icon: 'laptop',
     title: '历史记录',
-    items: [{ key: 'history1', link: '', title: 'dev1' }, { key: 'history2', link: '', title: 'test2' }, { key: 'history3', link: '', title: 'property3' }]
+    items: [{ key: 'history1', link: '/login', title: 'dev1' }, { key: 'history2', link: '', title: 'test2' }, { key: 'history3', link: '', title: 'property3' }]
   }, {
     icon: 'notification',
     title: '权限配置',
