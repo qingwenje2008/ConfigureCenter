@@ -14,8 +14,7 @@ export default class Fetch {
       'Accept': '*/*',
       // 'Content-Type': 'multipart/form-data'
     },
-    credentials: 'include',
-    basePath: '/app_oa_manager'
+    // credentials: 'include',
   };
 
   // 初始化
@@ -23,8 +22,9 @@ export default class Fetch {
     this.globalConfig = { ...this.DEFAULT_CONFIG, ...options };
   }
 
-  // 请求拦截器
+  // 请求拦截器  在此处 处理token过期
   requestInjector(fetchConfig) {
+    console.log(fetchConfig)
     // const username = localStorage.getItem('username') && JSON.parse(localStorage.getItem('username')) || {};
     // const cutTp = new Date().valueOf();
     // if (fetchConfig.url == '/restapi/v1/login') 
@@ -57,15 +57,18 @@ export default class Fetch {
   // 返回拦截器
   responseInjector = async response => {
     const resText = await response.text();
-    // // 校验是否是对象
+    console.log(resText)
+    // 校验是否是对象
     // if (/^(\{|\[)+[\w\W]*(\]|\})+$/.test(resText)) {
-    //   const json = JSON.parse(resText);
-    //   if (json.processStatus == 'grim_0000') {
-    //     return json;
-    //   } else {
-    //     throw json;
-    //   }
+      const json = JSON.parse(resText);
+      if (json.code == '1') {
+        console.log(json)
+        return json;
+      } else {
+        throw json;
+      }
     // }
+    console.log(resText)
     return resText;
   }
 
@@ -87,6 +90,7 @@ export default class Fetch {
 
   // 请求
   async fetch(params) {
+    // console.log(params)
     const { basePath, responseInjector = () => { }, requestInjector = () => { } } = this.globalConfig;
     // 请求参数
     let fetchConfig = { ...this.globalConfig, ...params };
@@ -103,6 +107,7 @@ export default class Fetch {
     const { url, ...config } = fetchConfig;
     // 发起请求
     const response = await fetch(`${basePath}${url}`, config);
+    console.log(response)
     // 请求成功
     if (response.ok)
       return responseInjector(response) || this.responseInjector(response);

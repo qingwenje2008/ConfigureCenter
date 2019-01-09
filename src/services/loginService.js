@@ -1,18 +1,18 @@
 import Fetch from './http';
-
-export default class AreaService extends Fetch {
+import { asyncHandler } from '../utils/httpUtil';
+export default class LoginService extends Fetch {
   constructor() {
     super({
-    //   basePath: "/app_grimlock_manager",
-      headers: {
-        'Accept': '*/*',
-        // 'Content-Type': 'multipart/form-data;'
-      }
+      basePath: "http://localhost:8000",
+      // headers: {
+      //   'Accept': '*/*',
+      //   'Content-Type': 'application/json'
+      // }
     });
   }
 
   // 登录
   login(params) {
-    return this.post('/department/uploadExcel', params);
+    return this.post('/api/login',params);
   }
 }

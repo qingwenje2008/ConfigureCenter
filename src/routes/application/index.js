@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Table, Popconfirm, Button } from 'antd';
 import { connect } from 'dva';
-@connect(state => ({ ...state.products }))
+@connect(state => ({ ...state.products,...state.user}))
 export default class ProductList extends React.Component {
     onDelete=(id)=> {
         this.props.dispatch({
@@ -26,10 +26,22 @@ render(){
     },
   }];
   return (
-        <Table
-          dataSource={this.props.products}
-          columns={columns}
-        />
+    <div>
+      <div style ={{height:50,width:100,background:'#f1f1f1'}} onClick={()=>{
+          const { dispatch, match } = this.props;
+                console.log(dispatch)
+                dispatch({
+                    type: 'userInfo/login',
+                    value: {name:'hh',pass:'www'}
+                  });
+      }}>
+        测试登录
+      </div>
+      <Table
+        dataSource={this.props.products}
+        columns={columns}
+      />
+    </div>
   );
 }
 };

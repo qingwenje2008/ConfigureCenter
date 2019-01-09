@@ -1,5 +1,6 @@
 import dva from 'dva';
 import './index.css';
+import main from './main';
 // import createLoading from 'dva-loading';
 
 // const app = dva({
@@ -19,13 +20,13 @@ import './index.css';
 const app = dva();
 
 // 2. Plugins
-app.use({});
+// app.use({});
 
 // 3. Model
 app.model(require('./models/global.model').default);
 
 // 4. Router
-app.router(require('./main').default);
+app.router(main);
 
 // 5. Start
 app.start('#root');

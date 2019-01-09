@@ -1,12 +1,16 @@
 import React from 'react';
 
 import { connect } from 'dva';
-import loginService from '../../services/loginService'
+import LoginService from '../../services/loginService'
 import styles from './index.css';
 import { Form, Icon, Input, Button, Checkbox, Modal, message } from 'antd';
 const FormItem = Form.Item;
-// @connect(state => ({ ...state.user }))
+const loginService = new LoginService();
+@connect(state => {
+    return { ...state.userInfo }
+})
 @Form.create()
+// @connect(state => state.userInfo)
 export default class Login extends React.Component {
     state={
         msg:null,
@@ -27,11 +31,22 @@ export default class Login extends React.Component {
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
                
-                console.log(values)
                 let params ={}
-                params.username=values.username;
+                params.username=values.userName;
                 params.password=values.password;
-                await loginService.login(params);
+                const { dispatch, match } = this.props;
+                dispatch({
+                    type: 'userInfo/login',
+                    value: params,
+                    callback:(res)=>{
+                        console.log(res)
+                        localStorage.setItem('username',res.username)
+                        this.props.history.push('/welcome')
+                    }
+                  });
+                // let res= await loginService.login(params);
+                
+                // console.log(res)
                 // localStorage.setItem('username',
                 //   JSON.stringify({ username: values.username, tp: new Date().valueOf() }));
                 // location.href = "/";

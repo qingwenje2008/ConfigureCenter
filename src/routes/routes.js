@@ -11,4 +11,12 @@ export default app => ([
       path: '/app',
       component: () => import('./application'),
     },
+    // {
+    //   app,
+    //   // models: () => [
+    //   //   import('../models/app.model')
+    //   // ],
+    //   path: '/welcome',
+    //   component: () => import('./welcome'),
+    // },
   ]);
