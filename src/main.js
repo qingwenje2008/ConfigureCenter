@@ -7,11 +7,11 @@ function RouterConfig({ history={}, app={} }) {
   const Routes = () => (
     routes(app).map((item, index) => <Route key={index} path={item.path} component={dynamic(item)} />)
   );
-// let loginStatus=false
+let loginStatus=localStorage.getItem('username')
   return (
     <Router history={history}>
       <Switch>
-      {/* <Redirect exact from="/" to={loginStatus ? '/home' : '/login'} /> */}
+      <Redirect exact from="/" to={loginStatus ? '/welcome' : '/login'} />
       <Route path="/login" exact component={dynamic({
             app,
             models: () => [
@@ -20,11 +20,12 @@ function RouterConfig({ history={}, app={} }) {
             component: () => import('./routes/login'),
           })}
       />
-        <Route path="/" exact render={() => (
+        
             <Layout>
+             {/* <Redirect exact from="/home" to={'/app'} /> */}
              <Routes/>
             </Layout>
-           )}/>
+           
           
       </Switch>
     </Router>

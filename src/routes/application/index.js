@@ -10,12 +10,13 @@ export default class ProductList extends React.Component {
           payload: id,
         });
       }
-render(){   
-    console.log(this.props)
+render(){
   const columns = [{
+    rowKey:'1',
     title: 'Name',
     dataIndex: 'name',
   }, {
+    rowKey:'2',
     title: 'Actions',
     render: (text, record) => {
       return (
