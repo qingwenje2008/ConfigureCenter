@@ -1,6 +1,8 @@
+/**
+ * 暂时未用到
+ */
 import { connect } from 'dva';
 import React from 'react';
-import { BrowserRouter as Router,withRouter, Route, Switch } from 'dva/router';
 import {
   Layout 
 } from 'antd';
@@ -12,21 +14,17 @@ const {Content} =Layout;
 class MyLayout extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props.history.location.pathname)
     this.state={
       isWelcome:props.location.pathname==='/welcome'
     }
-    // console.log(this.state.isWelcome)
   }
   componentWillReceiveProps(nextProps){
-    console.log(nextProps)
     this.setState({
       isWelcome: nextProps.location.pathname==='/welcome'
     })
   }
   render() {
     const { children } = this.props;
-    
     return<Layout style={styles.main}>
         <MainHeader/>
         <Layout>
@@ -39,7 +37,6 @@ class MyLayout extends React.Component {
             </Content>
           </Layout>
          }
-        
         </Layout>
       </Layout>
     

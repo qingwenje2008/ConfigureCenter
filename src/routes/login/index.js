@@ -10,7 +10,6 @@ const loginService = new LoginService();
     return { ...state.userInfo }
 })
 @Form.create()
-// @connect(state => state.userInfo)
 export default class Login extends React.Component {
     state={
         msg:null,
@@ -30,7 +29,6 @@ export default class Login extends React.Component {
         e.preventDefault();
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
-               
                 let params ={}
                 params.username=values.userName;
                 params.password=values.password;
@@ -41,16 +39,9 @@ export default class Login extends React.Component {
                     callback:(res)=>{
                         console.log(res)
                         localStorage.setItem('username',res.username)
-                        this.props.history.push('/welcome')
+                        this.props.history.push('/')
                     }
                   });
-                // let res= await loginService.login(params);
-                
-                // console.log(res)
-                // localStorage.setItem('username',
-                //   JSON.stringify({ username: values.username, tp: new Date().valueOf() }));
-                // location.href = "/";
-                
             }
         });
     }

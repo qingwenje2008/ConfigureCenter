@@ -1,7 +1,7 @@
 export const sliderMenus = [{
     icon: 'user',
     title: '应用',
-    items: [{ key: 'app1', link: '/app', title: 'app1' }, { key: 'app2', link: '', title: 'test' }, { key: 'app3', link: '', title: 'property' }]
+    items: [{ key: 'app1', link: '/app', title: 'app1' }, { key: 'app2', link: '/welcome', title: 'test' }, { key: 'app3', link: '', title: 'property' }]
   }, {
     icon: 'laptop',
     title: '历史记录',

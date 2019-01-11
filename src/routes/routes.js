@@ -3,6 +3,14 @@
  * @email 1161909281@qq.com
  */
 export default app => ([
+  {
+    app,
+    models: () => [
+      import('../models/welcome.model')
+    ],
+    path: '/welcome', 
+    component: () => import('./welcome'),
+  },
     {
       app,
       models: () => [
@@ -11,12 +19,4 @@ export default app => ([
       path: '/app',
       component: () => import('./application'),
     },
-    // {
-    //   app,
-    //   // models: () => [
-    //   //   import('../models/app.model')
-    //   // ],
-    //   path: '/welcome',
-    //   component: () => import('./welcome'),
-    // },
   ]);

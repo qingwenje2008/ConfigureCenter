@@ -1,6 +1,7 @@
 import dva from 'dva';
 import './index.css';
 import main from './main';
+import {browserHistory} from 'dva/router'
 // import createLoading from 'dva-loading';
 
 // const app = dva({
