@@ -10,4 +10,4 @@ export const sliderMenus = [{
   icon: 'notification',
   title: '权限配置',
   items: [{ key: 'auth1', link: '', title: 'dev4' }, { key: 'auth2', link: '', title: 'test4' }, { key: 'auth3', link: '', title: 'property4' }]
-},]
+},];

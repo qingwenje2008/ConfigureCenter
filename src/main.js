@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'dva/dynamic';
 import { Router, Route, Switch } from 'dva/router';
-import Layout from './components/layout/layout'
+import Layout from './components/layout/layout';
 function RouterConfig({ history = {}, app = {} }) {
 
   return (

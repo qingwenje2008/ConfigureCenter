@@ -6,14 +6,11 @@ import {
 } from 'antd';
 
 import dynamic from 'dva/dynamic';
-import MainHeader from '../mainHeader'
-import MainMenu from '../mainMenu'
-import ContentHeader from '../contentHeader'
-import Welcome from '../../routes/welcome';
-import App from '../../routes/application'
-import routes from '../../routes/routes'
-import Content from './content'
-
+import MainHeader from '../mainHeader';
+import MainMenu from '../mainMenu';
+import routes from '../../routes/routes';
+import Content from './content';
+import PropTypes from 'prop-types';
 class MainLayout extends React.Component {
   render() {
     const { app } = this.props;
@@ -37,11 +34,13 @@ class MainLayout extends React.Component {
           </Switch> 
         </Layout>
       </Layout>
-    )
+    );
   }
 }
 const styles={
   main:{ width: '100%', height: '100%' },
-}
-
+};
+MainLayout.propTypes = {
+  app: PropTypes.object
+};
 export default connect()(MainLayout);

@@ -3,7 +3,7 @@ import { asyncHandler } from '../utils/httpUtil';
 export default class LoginService extends Fetch {
   constructor() {
     super({
-      basePath: "http://localhost:8000",
+      basePath: 'http://localhost:8000',
       // headers: {
       //   'Accept': '*/*',
       //   'Content-Type': 'application/json'

@@ -5,8 +5,6 @@
 
 import fetch from 'dva/fetch';
 import { Modal } from 'antd';
-const confirm = Modal.confirm;
-let isLogin = true;
 export default class Fetch {
   // 默认参数
   DEFAULT_CONFIG = {
@@ -24,7 +22,7 @@ export default class Fetch {
 
   // 请求拦截器  在此处 处理token过期
   requestInjector(fetchConfig) {
-    console.log(fetchConfig)
+    console.log(fetchConfig);
     // const username = localStorage.getItem('username') && JSON.parse(localStorage.getItem('username')) || {};
     // const cutTp = new Date().valueOf();
     // if (fetchConfig.url == '/restapi/v1/login') 
@@ -57,19 +55,16 @@ export default class Fetch {
   // 返回拦截器
   responseInjector = async response => {
     const resText = await response.text();
-    console.log(resText)
+    console.log(resText);
     // 校验是否是对象
     // if (/^(\{|\[)+[\w\W]*(\]|\})+$/.test(resText)) {
-      const json = JSON.parse(resText);
-      if (json.code == '1') {
-        console.log(json)
-        return json;
-      } else {
-        throw json;
-      }
-    // }
-    console.log(resText)
-    return resText;
+    const json = JSON.parse(resText);
+    if (json.code == '1') {
+      console.log(json);
+      return json;
+    } else {
+      throw json;
+    }
   }
 
   // 请求错误
@@ -107,7 +102,7 @@ export default class Fetch {
     const { url, ...config } = fetchConfig;
     // 发起请求
     const response = await fetch(`${basePath}${url}`, config);
-    console.log(response)
+    console.log(response);
     // 请求成功
     if (response.ok)
       return responseInjector(response) || this.responseInjector(response);

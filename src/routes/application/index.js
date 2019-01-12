@@ -1,9 +1,16 @@
 import React from 'react';
 import { Table, Popconfirm, Button } from 'antd';
 import { connect } from 'dva';
-@connect(state => ({ ...state.products, ...state.user }))
-export default class ProductList extends React.Component {
+
+import PropTypes from 'prop-types';
+@connect(state => ({ ...state.products }))
+class ProductList extends React.Component {
+  static defaultProps = {
+    dispatch: ()=>{},
+    products:[]
+  }
   onDelete = (id) => {
+    console.log(this.props);
     this.props.dispatch({
       type: 'products/delete',
       payload: id,
@@ -25,18 +32,9 @@ export default class ProductList extends React.Component {
         );
       },
     }];
+    console.log(this.props.products);
     return (
       <div>
-        <div style={{ height: 50, width: 100, background: '#f1f1f1' }} onClick={() => {
-          const { dispatch, match } = this.props;
-          console.log(dispatch)
-          dispatch({
-            type: 'userInfo/login',
-            value: { name: 'hh', pass: 'www' }
-          });
-        }}>
-          测试登录
-      </div>
         <Table
           dataSource={this.props.products}
           columns={columns}
@@ -44,13 +42,11 @@ export default class ProductList extends React.Component {
       </div>
     );
   }
+}
+
+ProductList.propTypes = {
+  dispatch: PropTypes.object,
+  products: PropTypes.object,
 };
 
-// ProductList.propTypes = {
-//   onDelete: PropTypes.func.isRequired,
-//   products: PropTypes.array.isRequired,
-// };
-
-// export default connect(({ products }) => ({
-//     products,
-//   }))(ProductList);
+export default ProductList;

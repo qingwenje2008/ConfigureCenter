@@ -4,24 +4,24 @@
  */
 import { message } from 'antd';
 // 异步处理函数 返回promise
-export const asyncHandler = (promise) =>{
-  console.log(promise)
+export const asyncHandler = (promise) => {
+  console.log(promise);
   promise.then(res => {
     return res;
   }).catch(err => {
     message.info(err.message || err.msg || '网络连接错误');
     throw err;
   });
-} 
-export const urlPrase = (search)=>{
-    let reg = /([^?&=]+)=([^?&=]+)/g;
-        let paramObj = {};
-        search.replace(reg, function () {
-            // console.log(arguments[1]);
-            paramObj[arguments[1]] = arguments[2];
-        });
-        return paramObj
-  }
+};
+export const urlPrase = (search) => {
+  let reg = /([^?&=]+)=([^?&=]+)/g;
+  let paramObj = {};
+  search.replace(reg, function () {
+    // console.log(arguments[1]);
+    paramObj[arguments[1]] = arguments[2];
+  });
+  return paramObj;
+};
 //复制功能
 export const copyText = (text) => {
   const target = document.createElement('div');
@@ -41,4 +41,4 @@ export const copyText = (text) => {
   } finally {
     target.parentElement.removeChild(target);
   }
-}
+};

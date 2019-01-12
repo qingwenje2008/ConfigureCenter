@@ -1,30 +1,35 @@
 import { connect } from 'dva';
 import React from 'react';
 import {
-  Layout 
+  Layout
 } from 'antd';
-import ContentHeader from '../contentHeader'
-const {Content} =Layout;
+import ContentHeader from '../contentHeader';
+import PropTypes from 'prop-types';
+const { Content } = Layout;
+
 class MyLayout extends React.Component {
   render() {
-    const { children} = this.props;
+    const { children } = this.props;
     return (
       <Layout style={styles.menu}>
-        <ContentHeader/>
+        <ContentHeader />
         <Content style={styles.content}>
-         {children}
+          {children}
         </Content>
       </Layout>
-    )  
+    );
   }
 }
-const styles={
-  content:{
+const styles = {
+  content: {
     background: '#fff',
-    padding: 24, margin: 0, 
+    padding: 24, margin: 0,
     minHeight: 280,
   },
-  menu:{ padding: '0 24px 24px' },
-}
+  menu: { padding: '0 24px 24px' },
+};
 
+MyLayout.propTypes = {
+  children: PropTypes.object
+};
 export default connect()(MyLayout);
