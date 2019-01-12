@@ -6,6 +6,12 @@
 # production
 /dist
 
+# vs config
+.vscode/
+
 # misc
 .DS_Store
 npm-debug.log*
+
+# beatutify
+.jsbeautifyrc

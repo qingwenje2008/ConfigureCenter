@@ -8,15 +8,15 @@ export default app => ([
     models: () => [
       import('../models/welcome.model')
     ],
-    path: '/welcome', 
+    path: '/welcome',
     component: () => import('./welcome'),
   },
-    {
-      app,
-      models: () => [
-        import('../models/app.model')
-      ],
-      path: '/app',
-      component: () => import('./application'),
-    },
-  ]);
+  {
+    app,
+    models: () => [
+      import('../models/app.model')
+    ],
+    path: '/app',
+    component: () => import('./application'),
+  },
+]);
