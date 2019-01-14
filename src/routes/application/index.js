@@ -10,7 +10,6 @@ class ProductList extends React.Component {
     products:[]
   }
   onDelete = (id) => {
-    console.log(this.props);
     this.props.dispatch({
       type: 'products/delete',
       payload: id,
@@ -32,7 +31,6 @@ class ProductList extends React.Component {
         );
       },
     }];
-    console.log(this.props.products);
     return (
       <div>
         <Table
@@ -46,7 +44,7 @@ class ProductList extends React.Component {
 
 ProductList.propTypes = {
   dispatch: PropTypes.object,
-  products: PropTypes.object,
+  products: PropTypes.array,
 };
 
 export default ProductList;
