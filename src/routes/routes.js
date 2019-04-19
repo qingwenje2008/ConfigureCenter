@@ -19,4 +19,12 @@ export default app => ([
     path: '/app',
     component: () => import('./application'),
   },
+  {
+    app,
+    models: () => [
+      import('../models/test.model')
+    ],
+    path: '/test',
+    component: () => import('./test'),
+  },
 ]);

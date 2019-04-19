@@ -10,7 +10,8 @@ export default {
 
   reducers: {
     'delete'(state, { payload: id }) {
-      return state.products.filter(item => item.id !== id);
+      const arr = state.products.filter(item => item.id !== id);
+      return {...state,products:arr};
     },
   },
 
