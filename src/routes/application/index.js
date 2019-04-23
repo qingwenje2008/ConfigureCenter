@@ -17,11 +17,11 @@ class ProductList extends React.Component {
   }
   render() {
     const columns = [{
-      rowKey: '1',
+      // rowKey: '1',
       title: 'Name',
       dataIndex: 'name',
     }, {
-      rowKey: '2',
+      // rowKey: '2',
       title: 'Actions',
       render: (text, record) => {
         return (
@@ -35,6 +35,7 @@ class ProductList extends React.Component {
       <div>
         <Table
           dataSource={this.props.products}
+          rowKey={'rowKey'}
           columns={columns}
         />
       </div>
