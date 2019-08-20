@@ -1,0 +1,22 @@
+.examination{
+    height: 100%;
+    overflow: auto;
+    
+}
+.answers{
+   color: red;     
+}
+.question{
+    color: #333; 
+    font-size: 18px;  
+    margin: 5px;  
+ }
+ .option{
+    font-size: 16px;  
+    margin: 5px; 
+ }
+ .rightOption{
+    font-size: 16px;  
+    margin: 5px; 
+    background: rgb(247, 213, 213); 
+ }

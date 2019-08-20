@@ -1,20 +1,20 @@
 Arguments: 
-  E:\environment\node\node.exe C:\Users\YZS\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add babel-preset-env -D
+  C:\Program Files\nodejs\node.exe C:\Users\YZS\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add roadhog@2.5.0-beta.4 -D
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;E:\environment\node\;E:\environment\Git\cmd;C:\WINDOWS\System32\OpenSSH\;E:\environment\python;E:\environment\python\Scripts\;E:\config\android_studio\sdk\tools;E:\config\android_studio\sdk\platform-tools;E:\environment\jdk\bin;E:\environment\jdk\jre;E:\Microsoft VS Code\bin;C:\Users\YZS\AppData\Roaming\npm;C:\Users\YZS\AppData\Local\Microsoft\WindowsApps;E:\worksoftware\Microsoft VS Code\bin
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_191\bin;E:\environment\android;E:\environment\android\Sdk\platform-tools;E:\worksoft\Microsoft VS Code\bin;C:\Users\YZS\AppData\Roaming\npm;E:\worksoft\Fiddler;C:\Users\YZS\AppData\Local\Microsoft\WindowsApps
 
 Yarn version: 
-  1.12.3
+  1.17.3
 
 Node version: 
-  10.14.1
+  10.16.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\YZS\AppData\Local\Yarn\Cache\v4\npm-antd-3.12.1-d1b3138ee907f7884f9eae2bfdee0b1b714bfe62\node_modules\antd\.yarn-tarball.tgz'
+  Error: EPERM: operation not permitted, unlink 'E:\workplace\projects_test\ConfigureCenter\node_modules\.staging\acorn-03c746cd'
 
 npm manifest: 
   {
@@ -27,11 +27,13 @@ npm manifest:
     },
     "dependencies": {
       "antd": "^3.11.2",
+      "babel-eslint": "^10.0.1",
       "css-loader": "^2.1.0",
       "dva": "^2.4.1",
       "history": "^4.7.2",
       "mockjs": "^1.0.1-beta3",
       "node-sass": "^4.11.0",
+      "prop-types": "^15.6.2",
       "react": "^16.2.0",
       "react-dom": "^16.2.0",
       "sass-loader": "^7.1.0"
@@ -39,6 +41,7 @@ npm manifest:
     "devDependencies": {
       "babel-plugin-dva-hmr": "^0.3.2",
       "babel-plugin-import": "^1.11.0",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
       "eslint": "^4.14.0",
       "eslint-config-umi": "^0.1.1",
       "eslint-plugin-flowtype": "^2.34.1",
@@ -46,8 +49,7 @@ npm manifest:
       "eslint-plugin-jsx-a11y": "^5.1.1",
       "eslint-plugin-react": "^7.1.0",
       "husky": "^0.12.0",
-      "redbox-react": "^1.4.3",
-      "roadhog": "^2.0.0"
+      "redbox-react": "^1.4.3"
     }
   }
 
